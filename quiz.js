@@ -16,6 +16,7 @@ form.addEventListener('submit', e=>{
     
         }
     })
+    scrollTo(0,0)
     result.classList.remove('d-none')
     displayScore.textContent=`${score}%`
 })
