@@ -12,11 +12,21 @@ form.addEventListener('submit', e=>{
     userAnswers.forEach((answer, index)=>{
 
         if (answer===correctAnswers[index]){
-            score +=25;
+            score+=25;
     
         }
     })
     scrollTo(0,0)
     result.classList.remove('d-none')
-    displayScore.textContent=`${score}%`
+   
+
+    let output=0
+    const timer=setInterval(()=>{
+        displayScore.textContent=`${score}%`
+        if (output===score){
+            clearInterval(timer)
+        }else{
+            output++;
+        }
+    },10)
 })
